@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E761B7A525AD29EE0030D58E /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E761B7A425AD29EE0030D58E /* MoviesResponse.swift */; };
 		E7E58E0625A7875000F91985 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E58E0525A7875000F91985 /* AppDelegate.swift */; };
 		E7E58E0825A7875000F91985 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E58E0725A7875000F91985 /* SceneDelegate.swift */; };
 		E7E58E0A25A7875000F91985 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E58E0925A7875000F91985 /* ViewController.swift */; };
@@ -39,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E761B7A425AD29EE0030D58E /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
 		E7E58E0225A7875000F91985 /* eventos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eventos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E58E0525A7875000F91985 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7E58E0725A7875000F91985 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				E7E58E3B25A8A33100F91985 /* Movie.swift */,
-				E761B7A425AD29EE0030D58E /* MoviesResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,7 +302,6 @@
 				E7E58E0A25A7875000F91985 /* ViewController.swift in Sources */,
 				E7E58E5025AB4D8800F91985 /* MovieCell.swift in Sources */,
 				E7E58E0625A7875000F91985 /* AppDelegate.swift in Sources */,
-				E761B7A525AD29EE0030D58E /* MoviesResponse.swift in Sources */,
 				E7E58E4825A8B25E00F91985 /* Request.swift in Sources */,
 				E7E58E3C25A8A33100F91985 /* Movie.swift in Sources */,
 				E7E58E0825A7875000F91985 /* SceneDelegate.swift in Sources */,

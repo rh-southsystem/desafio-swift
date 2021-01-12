@@ -11,19 +11,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var movies : [Movie] = []
     
-    let movies = Movie(id: 1, name: "Filme exemplo", imageURL: "")
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let request = Request()
+ 
         
-        request.getMovies { (movie) in
-            
+        request.popularMoviesRequest { (movies) in
+            for movie in movies {
+                self.movies.append(movie)
+            }
         }
-        
+        print(self.movies.count )
         // Do any additional setup after loading the view.
     }
 
