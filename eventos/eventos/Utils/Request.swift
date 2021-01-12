@@ -127,32 +127,6 @@ class Request{
         }
     }
     
-    func imageMovie(image_path: String, completion: @escaping (Movie) -> ()){
-        
-        if let url = URL(string: "https://image.tmdb.org/t/p/w500/\(image_path))"){
-            let imageTask = URLSession.shared.dataTask(with: url) {(nsData, urlResponse, error) in
-                if error == nil {
-                    
-                    if let backData = nsData {
-                        
-                        do {
-                            let jsonResult = try JSONSerialization.jsonObject(with: backData, options: .allowFragments)
-                            
-                            
-                            
-                        } catch {
-                            print(error.localizedDescription)
-                        }
-                        
-                    }
-                    
-                }else {
-                    print(error?.localizedDescription)
-                }
-            }
-        }
-    }
-    
     
     
     
@@ -174,6 +148,8 @@ class Request{
             print($0)
         }
     }
+    
+    
     
 }
 
