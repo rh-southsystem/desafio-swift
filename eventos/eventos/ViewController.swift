@@ -12,12 +12,17 @@ import UIKit
 class ViewController: UIViewController {
 
     
-    let movies = Movie(name: "Filme exemplo", imageURL: "")
+    let movies = Movie(id: 1, name: "Filme exemplo", imageURL: "")
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let request = Request()
+        
+        request.getMovies { (movie) in
+            
+        }
         
         // Do any additional setup after loading the view.
     }

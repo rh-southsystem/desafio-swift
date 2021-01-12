@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Movie{
+public struct Movie: Codable, Identifiable{
+    public var id: Int
+    
     let name: String
     let imageURL: String
 }
+
+
+
