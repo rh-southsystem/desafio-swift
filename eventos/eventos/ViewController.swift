@@ -56,6 +56,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         
             cell.movieTitleLabel.text = movie.original_title
             cell.movieImage.downloaded(from: URL(string: movie.photo)!)
+            cell.movieVoteAverage.text = "Average vote: " + movie.vote_average.description
             return cell
         }
         return UITableViewCell()
@@ -64,6 +65,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
 }
 
+
+//MARK: - Extensão para fazer download de imageView com URL
 
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
