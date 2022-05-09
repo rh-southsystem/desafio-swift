@@ -22,7 +22,7 @@ class ListEventsViewController : UIViewController {
     }
     
     private lazy var tableView: UITableView = {
-        let view = UITableView()
+        let view = UITableView(frame: .zero, style: .insetGrouped)
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -66,6 +66,7 @@ class ListEventsViewController : UIViewController {
             self.tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
         ])
         
+        self.tableView.indicatorStyle = .black
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.refreshControl = UIRefreshControl()
@@ -98,7 +99,9 @@ extension ListEventsViewController: UITableViewDataSource {
         if let model = self.viewModel.model, indexPath.row < model.count {
             let event = model[indexPath.row]
             let cell: ListEventsTableViewCell = dequeue(tableView, with: Cells.event.rawValue, indexPath)
-            
+            cell.title = event.title
+            cell.desc = event.description
+            cell.image = event.image
             return cell
         }
         
