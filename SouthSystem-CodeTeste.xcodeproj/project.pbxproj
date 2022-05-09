@@ -16,6 +16,12 @@
 		37282E3C2829CBF500B9807B /* SouthSystem_CodeTesteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E3B2829CBF500B9807B /* SouthSystem_CodeTesteTests.swift */; };
 		37282E462829CBF500B9807B /* SouthSystem_CodeTesteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E452829CBF500B9807B /* SouthSystem_CodeTesteUITests.swift */; };
 		37282E482829CBF500B9807B /* SouthSystem_CodeTesteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E472829CBF500B9807B /* SouthSystem_CodeTesteUITestsLaunchTests.swift */; };
+		37282E5D2829CCFF00B9807B /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E5C2829CCFF00B9807B /* Services.swift */; };
+		37282E5F2829CD7F00B9807B /* ListEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E5E2829CD7F00B9807B /* ListEventsViewController.swift */; };
+		37282E612829CD9800B9807B /* ListEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E602829CD9800B9807B /* ListEventsViewModel.swift */; };
+		37282E632829CDAE00B9807B /* ListEventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E622829CDAE00B9807B /* ListEventsModel.swift */; };
+		37282E652829CDC100B9807B /* ListEventsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E642829CDC100B9807B /* ListEventsAPI.swift */; };
+		37282E672829CE7400B9807B /* ListEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E662829CE7400B9807B /* ListEventsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		37282E412829CBF500B9807B /* SouthSystem-CodeTesteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SouthSystem-CodeTesteUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37282E452829CBF500B9807B /* SouthSystem_CodeTesteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SouthSystem_CodeTesteUITests.swift; sourceTree = "<group>"; };
 		37282E472829CBF500B9807B /* SouthSystem_CodeTesteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SouthSystem_CodeTesteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		37282E5C2829CCFF00B9807B /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		37282E5E2829CD7F00B9807B /* ListEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventsViewController.swift; sourceTree = "<group>"; };
+		37282E602829CD9800B9807B /* ListEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventsViewModel.swift; sourceTree = "<group>"; };
+		37282E622829CDAE00B9807B /* ListEventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventsModel.swift; sourceTree = "<group>"; };
+		37282E642829CDC100B9807B /* ListEventsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventsAPI.swift; sourceTree = "<group>"; };
+		37282E662829CE7400B9807B /* ListEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,8 @@
 		37282E232829CBF400B9807B /* SouthSystem-CodeTeste */ = {
 			isa = PBXGroup;
 			children = (
+				37282E5B2829CCF100B9807B /* Services */,
+				37282E542829CC5700B9807B /* Features */,
 				37282E242829CBF400B9807B /* AppDelegate.swift */,
 				37282E262829CBF400B9807B /* SceneDelegate.swift */,
 				37282E282829CBF400B9807B /* ViewController.swift */,
@@ -125,6 +139,74 @@
 				37282E472829CBF500B9807B /* SouthSystem_CodeTesteUITestsLaunchTests.swift */,
 			);
 			path = "SouthSystem-CodeTesteUITests";
+			sourceTree = "<group>";
+		};
+		37282E542829CC5700B9807B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				37282E552829CCC300B9807B /* ListEvents */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		37282E552829CCC300B9807B /* ListEvents */ = {
+			isa = PBXGroup;
+			children = (
+				37282E5A2829CCEC00B9807B /* API */,
+				37282E592829CCE600B9807B /* View */,
+				37282E582829CCE200B9807B /* Model */,
+				37282E572829CCDE00B9807B /* ViewModel */,
+				37282E562829CCCF00B9807B /* Controller */,
+			);
+			path = ListEvents;
+			sourceTree = "<group>";
+		};
+		37282E562829CCCF00B9807B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				37282E5E2829CD7F00B9807B /* ListEventsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		37282E572829CCDE00B9807B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				37282E602829CD9800B9807B /* ListEventsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		37282E582829CCE200B9807B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37282E622829CDAE00B9807B /* ListEventsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		37282E592829CCE600B9807B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				37282E662829CE7400B9807B /* ListEventsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		37282E5A2829CCEC00B9807B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				37282E642829CDC100B9807B /* ListEventsAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		37282E5B2829CCF100B9807B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				37282E5C2829CCFF00B9807B /* Services.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +340,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37282E5F2829CD7F00B9807B /* ListEventsViewController.swift in Sources */,
+				37282E652829CDC100B9807B /* ListEventsAPI.swift in Sources */,
 				37282E292829CBF400B9807B /* ViewController.swift in Sources */,
+				37282E632829CDAE00B9807B /* ListEventsModel.swift in Sources */,
+				37282E5D2829CCFF00B9807B /* Services.swift in Sources */,
+				37282E672829CE7400B9807B /* ListEventsTableViewCell.swift in Sources */,
+				37282E612829CD9800B9807B /* ListEventsViewModel.swift in Sources */,
 				37282E252829CBF400B9807B /* AppDelegate.swift in Sources */,
 				37282E272829CBF400B9807B /* SceneDelegate.swift in Sources */,
 			);
