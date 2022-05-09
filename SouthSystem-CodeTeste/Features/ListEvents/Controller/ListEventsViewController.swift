@@ -28,9 +28,32 @@ class ListEventsViewController : UIViewController {
         return view
     }()
     
+    var viewModel: ListEventsViewModel = ListEventsViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
+        self.loadDataEvents()
+    }
+    
+    @objc
+    private func loadDataEvents() {
+        self.tableView.refreshControl?.beginRefreshing()
+        self.viewModel.loadData { [weak self] error in
+            self?.tableView.refreshControl?.endRefreshing()
+            if let msgError = error {
+                let alertViewController = UIAlertController(title: "SouthSystem", message: msgError, preferredStyle: .alert)
+                let actionOk = UIAlertAction(title: "OK", style: .default) { _ in
+                    
+                }
+                alertViewController.addAction(actionOk)
+                self?.present(alertViewController, animated: true, completion: nil)
+                
+                return
+            }
+            
+            self?.tableView.reloadData()
+        }
     }
     
     private func configureTableView() {
@@ -45,7 +68,8 @@ class ListEventsViewController : UIViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
+        self.tableView.refreshControl = UIRefreshControl()
+        self.tableView.refreshControl?.addTarget(self, action: #selector(self.loadDataEvents), for: .valueChanged)
         for cell in Cells.allCases {
             self.tableView.register(cell.class, forCellReuseIdentifier: cell.rawValue)
         }
@@ -59,7 +83,7 @@ extension ListEventsViewController: UITableViewDelegate {
 extension ListEventsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.viewModel.model?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,7 +95,13 @@ extension ListEventsViewController: UITableViewDataSource {
             }
         }
         
-        let cell: ListEventsTableViewCell = dequeue(tableView, with: Cells.event.rawValue, indexPath)
-        return cell
+        if let model = self.viewModel.model, indexPath.row < model.count {
+            let event = model[indexPath.row]
+            let cell: ListEventsTableViewCell = dequeue(tableView, with: Cells.event.rawValue, indexPath)
+            
+            return cell
+        }
+        
+        return ListEventsTableViewCell()
     }
 }
