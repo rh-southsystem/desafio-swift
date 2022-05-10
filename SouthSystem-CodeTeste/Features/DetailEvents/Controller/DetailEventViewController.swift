@@ -28,16 +28,35 @@ class DetailEventViewController : UIViewController {
         return view
     }()
     
+    private lazy var checkInButton: UIButton = {
+        let view = UIButton(type: .system)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.setTitle("Check-In", for: .normal)
+        
+        return view
+    }()
+    
     var viewModel: DetailEventViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureController()
         self.configureTableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.loadData()
+    }
+    
+    private func configureController() {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.checkInButton)
+        self.checkInButton.addTarget(self, action: #selector(self.checkInAction(_:)), for: .touchUpInside)
+    }
+    
+    @objc
+    private func checkInAction(_ sender: UIButton) {
+        
     }
     
     private func loadData() {
