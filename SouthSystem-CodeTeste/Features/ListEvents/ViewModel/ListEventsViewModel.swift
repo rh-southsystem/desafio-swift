@@ -10,10 +10,10 @@ import Foundation
 class ListEventsViewModel {
     
     let api = ListEventsAPI()
-    var model: [ListEventsModel]?
+    var model: [EventsModel]?
     
     func loadData(_ completion: @escaping (String?) -> Void) {
-        self.api.loadData { (model: [ListEventsModel]?, error) in
+        self.api.loadData { (model: [EventsModel]?, error) in
             self.model = model
             completion(error)
         }

@@ -35,7 +35,7 @@ class ListEventsTableViewCell: UITableViewCell {
         return view
     }()
     
-    private lazy var descriptionLabel: UILabel = {
+    lazy var descriptionLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = " "

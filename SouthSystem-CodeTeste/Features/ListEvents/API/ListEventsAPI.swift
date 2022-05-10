@@ -13,8 +13,8 @@ class ListEventsAPI {
         static var events: String = Resources.baseUrl + "/events"
     }
     
-    func loadData(_ completion: @escaping ([ListEventsModel]?, String?) -> Void) {
-        Services().request(Resources.events) { (list: [ListEventsModel]?, error) in
+    func loadData(_ completion: @escaping ([EventsModel]?, String?) -> Void) {
+        Services().request(Resources.events) { (list: [EventsModel]?, error) in
             completion(list, error)
         }
     }

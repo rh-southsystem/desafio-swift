@@ -1,22 +1,22 @@
 //
-//  ListEventsViewController.swift
+//  DetailEventViewController.swift
 //  SouthSystem-CodeTeste
 //
-//  Created by Bruno Vieira on 09/05/22.
+//  Created by Bruno Vieira on 10/05/22.
 //
 
 import Foundation
 import UIKit
 
-class ListEventsViewController : UIViewController {
+class DetailEventViewController : UIViewController {
     
     private enum Cells: String, CaseIterable {
-        case event = "ListEventsTableViewCell"
+        case detail = "DetailEventTableViewCell"
         
         var `class`: AnyClass? {
             switch self {
-            case .event:
-                return ListEventsTableViewCell.self
+            case .detail:
+                return DetailEventTableViewCell.self
             }
         }
     }
@@ -28,18 +28,20 @@ class ListEventsViewController : UIViewController {
         return view
     }()
     
-    var viewModel: ListEventsViewModel = ListEventsViewModel()
+    var viewModel: DetailEventViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
-        self.loadDataEvents()
     }
     
-    @objc
-    private func loadDataEvents() {
-        self.tableView.refreshControl?.beginRefreshing()
-        self.viewModel.loadData { [weak self] error in
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadData()
+    }
+    
+    private func loadData() {
+        self.viewModel?.loadData { [weak self] error in
             self?.tableView.refreshControl?.endRefreshing()
             if let msgError = error {
                 let alertViewController = UIAlertController(title: "SouthSystem", message: msgError, preferredStyle: .alert)
@@ -66,36 +68,27 @@ class ListEventsViewController : UIViewController {
             self.tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
         ])
         
-        self.tableView.indicatorStyle = .black
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.refreshControl = UIRefreshControl()
-        self.tableView.refreshControl?.addTarget(self, action: #selector(self.loadDataEvents), for: .valueChanged)
+        self.tableView.allowsSelection = false
         for cell in Cells.allCases {
             self.tableView.register(cell.class, forCellReuseIdentifier: cell.rawValue)
         }
     }
 }
 
-extension ListEventsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if let list = self.viewModel.model, indexPath.row < list.count {
-            let event = list[indexPath.row]
-            let viewController = DetailEventViewController()
-            viewController.viewModel = DetailEventViewModel(eventID: event.id ?? "")
-            self.navigationController?.pushViewController(viewController, animated: true)
-        }
-    }
+extension DetailEventViewController: UITableViewDelegate {
+    
 }
 
-extension ListEventsViewController: UITableViewDataSource {
+extension DetailEventViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.model?.count ?? 0
+        return self.viewModel?.model != nil ? 1 : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
         func dequeue<T: UITableViewCell>(_ tableView: UITableView, with identifier: String,_ indexPath: IndexPath) -> T {
             if let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? T {
                 return cell
@@ -104,15 +97,12 @@ extension ListEventsViewController: UITableViewDataSource {
             }
         }
         
-        if let model = self.viewModel.model, indexPath.row < model.count {
-            let event = model[indexPath.row]
-            let cell: ListEventsTableViewCell = dequeue(tableView, with: Cells.event.rawValue, indexPath)
-            cell.title = event.title
-            cell.desc = event.description
-            cell.image = event.image
-            return cell
-        }
+        let cell: DetailEventTableViewCell = dequeue(tableView, with: Cells.detail.rawValue, indexPath)
+        let model = self.viewModel?.model
+        cell.title = model?.title
+        cell.desc = model?.description
+        cell.image = model?.image
         
-        return ListEventsTableViewCell()
+        return cell
     }
 }
