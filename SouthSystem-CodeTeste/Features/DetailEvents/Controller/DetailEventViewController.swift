@@ -121,6 +121,8 @@ extension DetailEventViewController: UITableViewDataSource {
         cell.title = model?.title
         cell.desc = model?.description
         cell.image = model?.image
+        cell.date = model?.dateFormated
+        cell.price = model?.priceFormated
         
         return cell
     }

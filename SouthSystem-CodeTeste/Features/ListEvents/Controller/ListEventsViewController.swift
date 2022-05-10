@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class ListEventsViewController : UIViewController {
     
@@ -33,7 +34,7 @@ class ListEventsViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
-        self.loadDataEvents()
+        self.loadDataEvents()        
     }
     
     @objc
@@ -110,6 +111,9 @@ extension ListEventsViewController: UITableViewDataSource {
             cell.title = event.title
             cell.desc = event.description
             cell.image = event.image
+            cell.date = event.dateFormated
+            cell.price = event.priceFormated
+            
             return cell
         }
         
