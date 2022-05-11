@@ -56,25 +56,60 @@ class DetailEventViewController : UIViewController {
     
     @objc
     private func checkInAction(_ sender: UIButton) {
+        let alertViewController = UIAlertController(title: "Check-In", message: "Informe usuário e senha para realizar check-in", preferredStyle: .alert)
         
+        alertViewController.addTextField { textField in
+            textField.placeholder = DetailEventViewModel.CheckInForm.email.rawValue
+        }
+        
+        alertViewController.addTextField { textField in
+            textField.placeholder = DetailEventViewModel.CheckInForm.nome.rawValue
+        }
+        
+        let actionOk = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            let fields = alertViewController.textFields
+            self?.viewModel?.fill(field: fields?[0].placeholder, value: fields?[0].text)
+            self?.viewModel?.fill(field: fields?[1].placeholder, value: fields?[1].text)
+            if let fieldError = self?.viewModel?.validateFields() {
+                self?.show(message: fieldError)
+            }
+            self?.checkIn()
+        }
+        alertViewController.addAction(actionOk)
+        self.present(alertViewController, animated: true, completion: nil)
+    }
+    
+    private func checkIn() {
+        self.tableView.refreshControl?.beginRefreshing()
+        self.viewModel?.sendCheckIn({ [weak self] message in
+            self?.tableView.refreshControl?.endRefreshing()
+            if let response = message {
+                self?.show(message: response)
+            }
+        })
     }
     
     private func loadData() {
+        self.tableView.refreshControl?.beginRefreshing()
         self.viewModel?.loadData { [weak self] error in
             self?.tableView.refreshControl?.endRefreshing()
             if let msgError = error {
-                let alertViewController = UIAlertController(title: "SouthSystem", message: msgError, preferredStyle: .alert)
-                let actionOk = UIAlertAction(title: "OK", style: .default) { _ in
-                    
-                }
-                alertViewController.addAction(actionOk)
-                self?.present(alertViewController, animated: true, completion: nil)
+                self?.show(message: msgError)
                 
                 return
             }
             
             self?.tableView.reloadData()
         }
+    }
+    
+    private func show(message error: String, with handler: (() -> Void)? = nil) {
+        let alertViewController = UIAlertController(title: "SouthSystem", message: error, preferredStyle: .alert)
+        let actionOk = UIAlertAction(title: "OK", style: .default) { _ in
+            handler?()
+        }
+        alertViewController.addAction(actionOk)
+        self.present(alertViewController, animated: true, completion: nil)
     }
     
     private func configureTableView() {

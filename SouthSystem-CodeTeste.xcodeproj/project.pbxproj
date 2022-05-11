@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37074BF6282C651E004AC20F /* CheckInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37074BF5282C651E004AC20F /* CheckInModel.swift */; };
+		37074BF8282C6A2D004AC20F /* CheckInRespondeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37074BF7282C6A2D004AC20F /* CheckInRespondeModel.swift */; };
 		37282E252829CBF400B9807B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E242829CBF400B9807B /* AppDelegate.swift */; };
 		37282E272829CBF400B9807B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E262829CBF400B9807B /* SceneDelegate.swift */; };
 		37282E292829CBF400B9807B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E282829CBF400B9807B /* ViewController.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37074BF5282C651E004AC20F /* CheckInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInModel.swift; sourceTree = "<group>"; };
+		37074BF7282C6A2D004AC20F /* CheckInRespondeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInRespondeModel.swift; sourceTree = "<group>"; };
 		37282E212829CBF400B9807B /* SouthSystem-CodeTeste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SouthSystem-CodeTeste.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37282E242829CBF400B9807B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37282E262829CBF400B9807B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				37B7C1D9282B084900FD185E /* CheckInEventModel.swift */,
+				37074BF5282C651E004AC20F /* CheckInModel.swift */,
+				37074BF7282C6A2D004AC20F /* CheckInRespondeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -410,9 +416,11 @@
 				37282E292829CBF400B9807B /* ViewController.swift in Sources */,
 				37282E632829CDAE00B9807B /* EventsModel.swift in Sources */,
 				37282E5D2829CCFF00B9807B /* Services.swift in Sources */,
+				37074BF6282C651E004AC20F /* CheckInModel.swift in Sources */,
 				37282E672829CE7400B9807B /* ListEventsTableViewCell.swift in Sources */,
 				37B7C1D6282B082700FD185E /* DetailEventViewController.swift in Sources */,
 				37B7C1DA282B084900FD185E /* CheckInEventModel.swift in Sources */,
+				37074BF8282C6A2D004AC20F /* CheckInRespondeModel.swift in Sources */,
 				37282E612829CD9800B9807B /* ListEventsViewModel.swift in Sources */,
 				37282E252829CBF400B9807B /* AppDelegate.swift in Sources */,
 				37282E272829CBF400B9807B /* SceneDelegate.swift in Sources */,
