@@ -10,7 +10,7 @@ import UIKit
 
 class DetailEventTableViewCell: ListEventsTableViewCell {
     
-    private lazy var localeLabel: UIButton = {
+    private lazy var localeButton: UIButton = {
         let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Localização", for: .normal)
@@ -18,18 +18,26 @@ class DetailEventTableViewCell: ListEventsTableViewCell {
         return view
     }()
     
+    var locationHandler: (() -> Void)?
+    
     override func initialize() {
         super.initialize()
         self.descriptionLabel.numberOfLines = 0
         self.accessoryType = .none
         
-        self.contentView.addSubview(self.localeLabel)
+        self.contentView.addSubview(self.localeButton)
         
         NSLayoutConstraint.activate([
-            self.localeLabel.topAnchor.constraint(equalTo: self.dateLabel.bottomAnchor),
-            self.localeLabel.leadingAnchor.constraint(equalTo: self.pictureImageView.trailingAnchor, constant: 6),
-            self.localeLabel.bottomAnchor.constraint(equalTo: self.descriptionLabel.topAnchor, constant: -6),
-            self.localeLabel.heightAnchor.constraint(equalToConstant: 20)
+            self.localeButton.topAnchor.constraint(equalTo: self.dateLabel.bottomAnchor),
+            self.localeButton.leadingAnchor.constraint(equalTo: self.pictureImageView.trailingAnchor, constant: 6),
+            self.localeButton.bottomAnchor.constraint(equalTo: self.descriptionLabel.topAnchor, constant: -6),
+            self.localeButton.heightAnchor.constraint(equalToConstant: 20)
         ])
+        self.localeButton.addTarget(self, action: #selector(self.locationAction(_:)), for: .touchUpInside)
+    }
+    
+    @objc
+    private func locationAction(_ sender: UIButton) {
+        self.locationHandler?()
     }
 }

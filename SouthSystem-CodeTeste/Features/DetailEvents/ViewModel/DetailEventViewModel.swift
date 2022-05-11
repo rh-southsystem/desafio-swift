@@ -14,11 +14,11 @@ class DetailEventViewModel {
         case nome = "Nome"
     }
     
-    let api = DetailEventAPI()
+    private let api = DetailEventAPI()
     var model: EventsModel?
-    var eventID: String
+    private var eventID: String
     
-    lazy var form: [CheckInForm: String] = {
+    private lazy var form: [CheckInForm: String] = {
         var form: [CheckInForm: String] = [:]
         for field in CheckInForm.allCases {
             form[field] = ""

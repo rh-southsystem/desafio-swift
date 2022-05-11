@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class DetailEventViewController : UIViewController {
     
@@ -89,6 +90,22 @@ class DetailEventViewController : UIViewController {
         })
     }
     
+    private func openMaps() {
+        let latitude: CLLocationDegrees = CLLocationDegrees(self.viewModel?.model?.latitude ?? 0.0)
+        let longitude: CLLocationDegrees = CLLocationDegrees(self.viewModel?.model?.longitude ?? 0.0)
+        let regionDistance:CLLocationDistance = 1000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = self.viewModel?.model?.title
+        mapItem.openInMaps(launchOptions: options)
+    }
+    
     private func loadData() {
         self.tableView.refreshControl?.beginRefreshing()
         self.viewModel?.loadData { [weak self] error in
@@ -158,7 +175,9 @@ extension DetailEventViewController: UITableViewDataSource {
         cell.image = model?.image
         cell.date = model?.dateFormated
         cell.price = model?.priceFormated
-        
+        cell.locationHandler = { [weak self] in
+            self?.openMaps()
+        }
         return cell
     }
 }
