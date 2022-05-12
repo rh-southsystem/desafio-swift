@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		37074BF6282C651E004AC20F /* CheckInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37074BF5282C651E004AC20F /* CheckInModel.swift */; };
 		37074BF8282C6A2D004AC20F /* CheckInRespondeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37074BF7282C6A2D004AC20F /* CheckInRespondeModel.swift */; };
+		37074BFB282C6FDE004AC20F /* CheckInTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37074BFA282C6FDE004AC20F /* CheckInTest.swift */; };
 		37282E252829CBF400B9807B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E242829CBF400B9807B /* AppDelegate.swift */; };
 		37282E272829CBF400B9807B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E262829CBF400B9807B /* SceneDelegate.swift */; };
 		37282E292829CBF400B9807B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37282E282829CBF400B9807B /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		37074BF5282C651E004AC20F /* CheckInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInModel.swift; sourceTree = "<group>"; };
 		37074BF7282C6A2D004AC20F /* CheckInRespondeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInRespondeModel.swift; sourceTree = "<group>"; };
+		37074BFA282C6FDE004AC20F /* CheckInTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTest.swift; sourceTree = "<group>"; };
 		37282E212829CBF400B9807B /* SouthSystem-CodeTeste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SouthSystem-CodeTeste.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37282E242829CBF400B9807B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37282E262829CBF400B9807B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37074BFC282C6FE4004AC20F /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				37074BFA282C6FDE004AC20F /* CheckInTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		37282E182829CBF400B9807B = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +237,7 @@
 		37B7C1CF282B07EE00FD185E /* DetailEvents */ = {
 			isa = PBXGroup;
 			children = (
+				37074BFC282C6FE4004AC20F /* Test */,
 				37B7C1D4282B081200FD185E /* API */,
 				37B7C1D3282B080900FD185E /* View */,
 				37B7C1D2282B080400FD185E /* Model */,
@@ -433,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37282E3C2829CBF500B9807B /* SouthSystem_CodeTesteTests.swift in Sources */,
+				37074BFB282C6FDE004AC20F /* CheckInTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

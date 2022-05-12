@@ -81,9 +81,7 @@ class DetailEventViewController : UIViewController {
     }
     
     private func checkIn() {
-        self.tableView.refreshControl?.beginRefreshing()
         self.viewModel?.sendCheckIn({ [weak self] message in
-            self?.tableView.refreshControl?.endRefreshing()
             if let response = message {
                 self?.show(message: response)
             }
@@ -106,10 +104,9 @@ class DetailEventViewController : UIViewController {
         mapItem.openInMaps(launchOptions: options)
     }
     
+    @objc
     private func loadData() {
-        self.tableView.refreshControl?.beginRefreshing()
         self.viewModel?.loadData { [weak self] error in
-            self?.tableView.refreshControl?.endRefreshing()
             if let msgError = error {
                 self?.show(message: msgError)
                 
