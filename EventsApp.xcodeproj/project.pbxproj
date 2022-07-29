@@ -16,7 +16,6 @@
 		BDA71D462892EA9100E4AEA9 /* EventsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA71D452892EA9100E4AEA9 /* EventsAppUITests.swift */; };
 		BDA71D562892ECDE00E4AEA9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BDA71D552892ECDE00E4AEA9 /* Alamofire */; };
 		BDE0B5542894568D008B2DC1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B5532894568D008B2DC1 /* Event.swift */; };
-		BDE0B557289458B2008B2DC1 /* TransformProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B556289458B2008B2DC1 /* TransformProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +50,6 @@
 		BDA71D452892EA9100E4AEA9 /* EventsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsAppUITests.swift; sourceTree = "<group>"; };
 		BDA71D472892EA9100E4AEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDE0B5532894568D008B2DC1 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		BDE0B556289458B2008B2DC1 /* TransformProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +142,6 @@
 		BDE0B5552894589B008B2DC1 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				BDE0B556289458B2008B2DC1 /* TransformProtocol.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -285,7 +282,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDA71D282892EA9000E4AEA9 /* ViewController.swift in Sources */,
-				BDE0B557289458B2008B2DC1 /* TransformProtocol.swift in Sources */,
 				BDA71D242892EA9000E4AEA9 /* AppDelegate.swift in Sources */,
 				BDE0B5542894568D008B2DC1 /* Event.swift in Sources */,
 				BDA71D262892EA9000E4AEA9 /* SceneDelegate.swift in Sources */,
