@@ -111,14 +111,10 @@
 		BDA71D222892EA9000E4AEA9 /* EventsApp */ = {
 			isa = PBXGroup;
 			children = (
+				BDE0B56528946F7D008B2DC1 /* Utils */,
 				BDE0B5552894589B008B2DC1 /* Coordinator */,
 				BDA71D532892EBEE00E4AEA9 /* Model */,
-				BDE0B55F28946B5A008B2DC1 /* EventsList */,
-				BDA71D232892EA9000E4AEA9 /* AppDelegate.swift */,
-				BDA71D252892EA9000E4AEA9 /* SceneDelegate.swift */,
-				BDA71D2C2892EA9100E4AEA9 /* Assets.xcassets */,
-				BDA71D2E2892EA9100E4AEA9 /* LaunchScreen.storyboard */,
-				BDA71D312892EA9100E4AEA9 /* Info.plist */,
+				BDE0B56428946F6A008B2DC1 /* Views */,
 				BDE0B55D28946A3F008B2DC1 /* EventDetailsViewController.swift */,
 			);
 			path = EventsApp;
@@ -175,6 +171,34 @@
 				BDE0B56228946BC9008B2DC1 /* EventsListViewModelProtocol.swift */,
 			);
 			path = EventsList;
+			sourceTree = "<group>";
+		};
+		BDE0B56428946F6A008B2DC1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BDE0B55F28946B5A008B2DC1 /* EventsList */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BDE0B56528946F7D008B2DC1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BDE0B56628946F85008B2DC1 /* App */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BDE0B56628946F85008B2DC1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BDA71D232892EA9000E4AEA9 /* AppDelegate.swift */,
+				BDA71D252892EA9000E4AEA9 /* SceneDelegate.swift */,
+				BDA71D2C2892EA9100E4AEA9 /* Assets.xcassets */,
+				BDA71D2E2892EA9100E4AEA9 /* LaunchScreen.storyboard */,
+				BDA71D312892EA9100E4AEA9 /* Info.plist */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,7 +514,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HKSJLM4DRR;
-				INFOPLIST_FILE = EventsApp/Info.plist;
+				INFOPLIST_FILE = EventsApp/Utils/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +533,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HKSJLM4DRR;
-				INFOPLIST_FILE = EventsApp/Info.plist;
+				INFOPLIST_FILE = EventsApp/Utils/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
