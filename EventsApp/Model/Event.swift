@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Event: Decodable {
+public struct Event: Decodable {
 	var id: String
 	var date: Int?
 	var description: String?

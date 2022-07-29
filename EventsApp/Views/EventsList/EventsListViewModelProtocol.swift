@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol EventsListViewModelProtocol {
-	
+	var events: [Event]? { get }
 }

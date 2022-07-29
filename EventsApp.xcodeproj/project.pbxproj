@@ -23,6 +23,9 @@
 		BDE0B56328946BC9008B2DC1 /* EventsListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B56228946BC9008B2DC1 /* EventsListViewModelProtocol.swift */; };
 		BDE0B5692894709A008B2DC1 /* EventDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B5682894709A008B2DC1 /* EventDetailsViewModelProtocol.swift */; };
 		BDE0B56B289470C0008B2DC1 /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B56A289470C0008B2DC1 /* EventDetailsViewModel.swift */; };
+		BDE0B56F2894747B008B2DC1 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B56E2894747B008B2DC1 /* Endpoints.swift */; };
+		BDE0B57128948BB8008B2DC1 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B57028948BB8008B2DC1 /* CustomError.swift */; };
+		BDE0B57328949010008B2DC1 /* EAStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B57228949010008B2DC1 /* EAStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		BDE0B56228946BC9008B2DC1 /* EventsListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewModelProtocol.swift; sourceTree = "<group>"; };
 		BDE0B5682894709A008B2DC1 /* EventDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
 		BDE0B56A289470C0008B2DC1 /* EventDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewModel.swift; sourceTree = "<group>"; };
+		BDE0B56E2894747B008B2DC1 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		BDE0B57028948BB8008B2DC1 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		BDE0B57228949010008B2DC1 /* EAStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,7 @@
 		BDE0B56528946F7D008B2DC1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BDE0B574289490DE008B2DC1 /* Helpers */,
 				BDE0B56628946F85008B2DC1 /* App */,
 			);
 			path = Utils;
@@ -213,6 +220,16 @@
 				BDE0B56A289470C0008B2DC1 /* EventDetailsViewModel.swift */,
 			);
 			path = EventDetails;
+			sourceTree = "<group>";
+		};
+		BDE0B574289490DE008B2DC1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BDE0B56E2894747B008B2DC1 /* Endpoints.swift */,
+				BDE0B57028948BB8008B2DC1 /* CustomError.swift */,
+				BDE0B57228949010008B2DC1 /* EAStrings.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +369,8 @@
 			files = (
 				BDA71D282892EA9000E4AEA9 /* EventsListViewController.swift in Sources */,
 				BDE0B56128946B82008B2DC1 /* EventsListViewModel.swift in Sources */,
+				BDE0B57328949010008B2DC1 /* EAStrings.swift in Sources */,
+				BDE0B57128948BB8008B2DC1 /* CustomError.swift in Sources */,
 				BDE0B55E28946A3F008B2DC1 /* EventDetailsViewController.swift in Sources */,
 				BDE0B56328946BC9008B2DC1 /* EventsListViewModelProtocol.swift in Sources */,
 				BDA71D242892EA9000E4AEA9 /* AppDelegate.swift in Sources */,
@@ -360,6 +379,7 @@
 				BDE0B5542894568D008B2DC1 /* Event.swift in Sources */,
 				BDE0B55C289463FA008B2DC1 /* EventsListRoute.swift in Sources */,
 				BDA71D262892EA9000E4AEA9 /* SceneDelegate.swift in Sources */,
+				BDE0B56F2894747B008B2DC1 /* Endpoints.swift in Sources */,
 				BDE0B56B289470C0008B2DC1 /* EventDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
