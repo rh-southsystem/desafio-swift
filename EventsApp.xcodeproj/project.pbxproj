@@ -21,6 +21,8 @@
 		BDE0B55E28946A3F008B2DC1 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B55D28946A3F008B2DC1 /* EventDetailsViewController.swift */; };
 		BDE0B56128946B82008B2DC1 /* EventsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B56028946B82008B2DC1 /* EventsListViewModel.swift */; };
 		BDE0B56328946BC9008B2DC1 /* EventsListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B56228946BC9008B2DC1 /* EventsListViewModelProtocol.swift */; };
+		BDE0B5692894709A008B2DC1 /* EventDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B5682894709A008B2DC1 /* EventDetailsViewModelProtocol.swift */; };
+		BDE0B56B289470C0008B2DC1 /* EventDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B56A289470C0008B2DC1 /* EventDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		BDE0B55D28946A3F008B2DC1 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		BDE0B56028946B82008B2DC1 /* EventsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewModel.swift; sourceTree = "<group>"; };
 		BDE0B56228946BC9008B2DC1 /* EventsListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListViewModelProtocol.swift; sourceTree = "<group>"; };
+		BDE0B5682894709A008B2DC1 /* EventDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
+		BDE0B56A289470C0008B2DC1 /* EventDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +115,10 @@
 		BDA71D222892EA9000E4AEA9 /* EventsApp */ = {
 			isa = PBXGroup;
 			children = (
-				BDE0B56528946F7D008B2DC1 /* Utils */,
 				BDE0B5552894589B008B2DC1 /* Coordinator */,
 				BDA71D532892EBEE00E4AEA9 /* Model */,
 				BDE0B56428946F6A008B2DC1 /* Views */,
-				BDE0B55D28946A3F008B2DC1 /* EventDetailsViewController.swift */,
+				BDE0B56528946F7D008B2DC1 /* Utils */,
 			);
 			path = EventsApp;
 			sourceTree = "<group>";
@@ -167,8 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				BDA71D272892EA9000E4AEA9 /* EventsListViewController.swift */,
-				BDE0B56028946B82008B2DC1 /* EventsListViewModel.swift */,
 				BDE0B56228946BC9008B2DC1 /* EventsListViewModelProtocol.swift */,
+				BDE0B56028946B82008B2DC1 /* EventsListViewModel.swift */,
 			);
 			path = EventsList;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				BDE0B55F28946B5A008B2DC1 /* EventsList */,
+				BDE0B56728947065008B2DC1 /* EventDetails */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +203,16 @@
 				BDA71D312892EA9100E4AEA9 /* Info.plist */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		BDE0B56728947065008B2DC1 /* EventDetails */ = {
+			isa = PBXGroup;
+			children = (
+				BDE0B55D28946A3F008B2DC1 /* EventDetailsViewController.swift */,
+				BDE0B5682894709A008B2DC1 /* EventDetailsViewModelProtocol.swift */,
+				BDE0B56A289470C0008B2DC1 /* EventDetailsViewModel.swift */,
+			);
+			path = EventDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,9 +356,11 @@
 				BDE0B56328946BC9008B2DC1 /* EventsListViewModelProtocol.swift in Sources */,
 				BDA71D242892EA9000E4AEA9 /* AppDelegate.swift in Sources */,
 				BDE0B55928946246008B2DC1 /* AppCoordinator.swift in Sources */,
+				BDE0B5692894709A008B2DC1 /* EventDetailsViewModelProtocol.swift in Sources */,
 				BDE0B5542894568D008B2DC1 /* Event.swift in Sources */,
 				BDE0B55C289463FA008B2DC1 /* EventsListRoute.swift in Sources */,
 				BDA71D262892EA9000E4AEA9 /* SceneDelegate.swift in Sources */,
+				BDE0B56B289470C0008B2DC1 /* EventDetailsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
