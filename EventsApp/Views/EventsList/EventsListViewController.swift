@@ -57,9 +57,12 @@ class EventsListViewController: UIViewController {
 		setupView()
 		
 		bindTableView()
+		addLoadingSubscribe()
 	}
-	
-	private func bindTableView() {
+}
+
+private extension EventsListViewController {
+	func bindTableView() {
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 		
 		viewModel?.events.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { (row,item,cell) in
@@ -80,13 +83,22 @@ class EventsListViewController: UIViewController {
 		})
 	}
 	
-	@objc private func didPullToRefresh() {
+	@objc func didPullToRefresh() {
 		viewModel?.fetchEventsList(finish: { [weak self] error in
 			if let error = error {
 				self?.outputHandler?(.fetchError(error))
 			}
-			self?.tableView.refreshControl?.endRefreshing()
 		})
+	}
+	
+	func addLoadingSubscribe() {
+		viewModel?.loading.subscribe({ [weak self] newValue in
+			if newValue.element == true {
+				self?.tableView.refreshControl?.beginRefreshing()
+			} else {
+				self?.tableView.refreshControl?.endRefreshing()
+			}
+		}).disposed(by: bag)
 	}
 }
 

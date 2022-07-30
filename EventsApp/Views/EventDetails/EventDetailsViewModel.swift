@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 
 class EventDetailsViewModel: EventDetailsViewModelProtocol {
+	private(set) var loading: BehaviorSubject<Bool> = BehaviorSubject<Bool>(value: false)
+	
 	private(set) var event: BehaviorSubject<Event> = BehaviorSubject<Event>(value: Event(id: "", title: "", date: "", description: "", image: Data(), local: "", price: 0))
 	private let id: String
 	
@@ -19,6 +21,7 @@ class EventDetailsViewModel: EventDetailsViewModelProtocol {
 	}
 	
 	func fetchEvent(finish: @escaping (Error?) -> Void) {
+		loading.onNext(true)
 		AF.request(Endpoints.eventsList.rawValue.appending(self.id)).response { [weak self] response in
 			switch response.result {
 			case .success(let data):
@@ -31,30 +34,17 @@ class EventDetailsViewModel: EventDetailsViewModelProtocol {
 					let newEvent = try JSONDecoder().decode(EventJSON.self, from: data)
 					
 					EventTransform.shared.transform(eventJSON: newEvent) { [weak self] ev in
+						self?.loading.onNext(false)
 						self?.event.onNext(ev)
 					}
 				} catch {
 					finish(error)
+					self?.loading.onNext(false)
 				}
 				
 			case .failure(let error):
 				finish(error)
-			}
-		}
-	}
-	
-	func fetchFoto(imgURL: String, result: @escaping (Result<Data, Error>) -> Void) {
-		AF.request(imgURL).response {  response in
-			switch response.result {
-			case .success(let data):
-				if let data = data {
-					result(.success(data))
-				} else {
-					result(.failure(CustomError(errorDescription: EAStrings.noDataFound.rawValue)))
-				}
-				
-			case .failure(let error):
-				result(.failure(error))
+				self?.loading.onNext(false)
 			}
 		}
 	}

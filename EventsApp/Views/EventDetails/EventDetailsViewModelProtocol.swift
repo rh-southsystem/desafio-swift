@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-public protocol EventDetailsViewModelProtocol {
+public protocol EventDetailsViewModelProtocol: ViewModelProtocol {
 	var event: BehaviorSubject<Event> { get }
 	
 	func fetchEvent(finish: @escaping (Error?) -> Void)

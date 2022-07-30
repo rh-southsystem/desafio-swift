@@ -43,7 +43,6 @@ class EventDetailsViewController: UIViewController {
 		var view = UIImageView()
 		
 		view.contentMode = .scaleAspectFill
-		view.image = UIImage(named: "placeHolder")
 		view.translatesAutoresizingMaskIntoConstraints = false
 		view.clipsToBounds = true
 		
@@ -63,6 +62,15 @@ class EventDetailsViewController: UIViewController {
 		
 		view.translatesAutoresizingMaskIntoConstraints = false
 		
+		return view
+	}()
+	
+	private var loadingIndicator: UIActivityIndicatorView = {
+		var view = UIActivityIndicatorView()
+		
+		view.style = .large
+		
+		view.translatesAutoresizingMaskIntoConstraints = false
 		return view
 	}()
 	
@@ -96,13 +104,14 @@ class EventDetailsViewController: UIViewController {
 		
 		setupView()
 		subEvent()
-		
+		addLoadingSubscribe()
     }
 }
 
 extension EventDetailsViewController: ComponentCreation {
 	func buildViewHierarchy() {
 		view.addSubview(scrollView)
+		
 		scrollView.addSubview(scrollContentView)
 
 		scrollView.addSubview(imageView)
@@ -156,8 +165,6 @@ private extension EventDetailsViewController {
 				}
 				
 				self?.title = event.element?.title
-				
-				self?.scrollView.refreshControl?.endRefreshing()
 			}
 		}).disposed(by: bag)
 		
@@ -165,11 +172,22 @@ private extension EventDetailsViewController {
 	}
 	
 	@objc func didPullToRefresh() {
-		viewModel?.fetchEvent(finish: { error in })
+		viewModel?.fetchEvent(finish: { [weak self] error in})
 	}
 	
 	func defaultImage() {
 		self.imageView.contentMode = .scaleAspectFit
 		self.imageView.image = UIImage(systemName: "nosign")
+	}
+	
+	func addLoadingSubscribe() {
+		viewModel?.loading.subscribe({ [weak self] newValue in
+			if newValue.element == true {
+				self?.scrollView.refreshControl?.beginRefreshing()
+			} else {
+				self?.scrollView.refreshControl?.endRefreshing()
+			}
+
+		}).disposed(by: bag)
 	}
 }
