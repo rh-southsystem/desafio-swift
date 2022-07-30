@@ -67,9 +67,9 @@ class EventsListViewController: UIViewController {
 	}
 	
 	private func bindTableView() {
-		tableView.register(UITableViewCell.self, forCellReuseIdentifier: EventCell.identifier)
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 		
-		viewModel?.events.bind(to: tableView.rx.items(cellIdentifier: EventCell.identifier, cellType: UITableViewCell.self)) { (row,item,cell) in
+		viewModel?.events.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { (row,item,cell) in
 			
 			if let title = item.title {
 				cell.textLabel?.text = title

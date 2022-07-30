@@ -20,7 +20,7 @@ extension AppCoordinator {
 		}
 		
 		DispatchQueue.main.async {
-			self.window?.rootViewController = vc
+			self.window?.rootViewController = UINavigationController(rootViewController: vc)
 		}
 	}
 }
