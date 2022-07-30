@@ -13,14 +13,17 @@ extension AppCoordinator {
 		let vc = EventsListViewController(viewModel: viewModel) { output in
 			switch output {
 			case .openDetails(let id):
-				break
+				self.showEventDetailsRoute(id: id)
 			case .fetchError(_):
 				break
 			}
 		}
 		
-		DispatchQueue.main.async {
-			self.window?.rootViewController = UINavigationController(rootViewController: vc)
+		DispatchQueue.main.async { [weak self] in
+			self?.navigationController = UINavigationController(rootViewController: vc)
+			self?.navigationController?.navigationBar.topItem?.title = EAStrings.events.rawValue
+			
+			self?.window?.rootViewController = self?.navigationController
 		}
 	}
 }

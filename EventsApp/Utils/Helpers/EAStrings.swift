@@ -10,4 +10,5 @@ import Foundation
 enum EAStrings: String {
 	case errorDecoding = "Houve um erro ao decodificar."
 	case noDataFound = "Não foi encontrado nenhum dado."
+	case events = "Eventos"
 }

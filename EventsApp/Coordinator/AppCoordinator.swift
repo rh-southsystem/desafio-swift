@@ -10,6 +10,7 @@ import UIKit
 class AppCoordinator: NSObject {
 	
 	private(set) var window: UIWindow?
+	var navigationController: UINavigationController?
 	
 	init(window: UIWindow?) {
 		super.init()

@@ -8,7 +8,7 @@
 import Foundation
 
 extension AppCoordinator {
-	func showEventDetailsRoute() {
+	func showEventDetailsRoute(id: String) {
 		let viewModel = EventDetailsViewModel()
 		
 		let vc = EventDetailsViewController(viewModel: viewModel) { output in
@@ -19,7 +19,9 @@ extension AppCoordinator {
 		}
 		
 		DispatchQueue.main.async {
-			self.window?.rootViewController = vc
+			vc.modalPresentationStyle = .fullScreen
+			
+			self.navigationController?.pushViewController(vc, animated: true)
 		}
 	}
 }
