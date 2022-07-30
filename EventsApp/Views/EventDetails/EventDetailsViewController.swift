@@ -142,8 +142,8 @@ private extension EventDetailsViewController {
 				self?.detailsCard.localLabel.text = event.element?.local
 				self?.detailsCard.titleLabel.text = event.element?.title
 				
-				let priceText = (event.element?.price ?? 0) == 0 ? EAStrings.free.rawValue : String(event.element?.price ?? 0)
-				self?.detailsCard.priceLabel.text = "\(EAStrings.price.rawValue) R$\(priceText)"
+				let priceText = (event.element?.price ?? 0) == 0 ? EAStrings.free.rawValue : "R$\(String(event.element?.price ?? 0))"
+				self?.detailsCard.priceLabel.text = "\(EAStrings.price.rawValue) \(priceText)"
 				
 				self?.descriptionCard.descriptionLabel.text = event.element?.description
 				
