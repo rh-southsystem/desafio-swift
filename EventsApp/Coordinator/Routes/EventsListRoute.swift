@@ -14,6 +14,8 @@ extension AppCoordinator {
 			switch output {
 			case .openDetails(let id):
 				break
+			case .fetchError(_):
+				break
 			}
 		}
 		

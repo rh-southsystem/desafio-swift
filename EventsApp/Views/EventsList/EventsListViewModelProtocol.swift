@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
 public protocol EventsListViewModelProtocol {
-	var events: [Event]? { get }
+	var events: PublishSubject<[Event]> { get }
+	
+	func fetchEventsList(finish: @escaping (Error?) -> Void)
 }
