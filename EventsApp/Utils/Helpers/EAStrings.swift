@@ -13,4 +13,9 @@ enum EAStrings: String {
 	case events = "Eventos"
 	case unknownDate = "Data desconhecida"
 	case unknownLocal = "Local desconhecido"
+	case unknownName = "Nome desconhecido"
+	case noDescriptionProvided = "Nenhuma descrição sobre o evento"
+	case description = "Descrição"
+	case price = "Preço:"
+	case free = "Gratuito"
 }

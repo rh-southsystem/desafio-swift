@@ -10,18 +10,21 @@ import Foundation
 extension AppCoordinator {
 	func showEventDetailsRoute(id: String) {
 		let viewModel = EventDetailsViewModel(id: id)
-		
-		let vc = EventDetailsViewController(viewModel: viewModel) { output in
+		var vc: EventDetailsViewController?
+		vc = EventDetailsViewController(viewModel: viewModel) { output in
 			switch output {
 			case .close:
-				break
+				DispatchQueue.main.async {
+					vc?.dismiss(animated: true, completion: { })
+				}
 			}
 		}
 		
 		DispatchQueue.main.async {
-			vc.modalPresentationStyle = .fullScreen
-			
-			self.navigationController?.pushViewController(vc, animated: true)
+			vc?.modalPresentationStyle = .fullScreen
+			if let vc = vc {
+				self.navigationController?.pushViewController(vc, animated: true)
+			}
 		}
 	}
 }

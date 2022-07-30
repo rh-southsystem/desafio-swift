@@ -38,6 +38,7 @@
 		BDE0B5B32894F2E4008B2DC1 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B5B22894F2E4008B2DC1 /* DateHelper.swift */; };
 		BDE0B5B52895024B008B2DC1 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B5B42895024B008B2DC1 /* ImageHelper.swift */; };
 		BDE0B5B728957A8D008B2DC1 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B5B628957A8D008B2DC1 /* LocationHelper.swift */; };
+		BDE0B5B92895A5CA008B2DC1 /* DescriptionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B5B82895A5CA008B2DC1 /* DescriptionCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		BDE0B5B22894F2E4008B2DC1 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		BDE0B5B42895024B008B2DC1 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		BDE0B5B628957A8D008B2DC1 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		BDE0B5B82895A5CA008B2DC1 /* DescriptionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 				BDE0B5682894709A008B2DC1 /* EventDetailsViewModelProtocol.swift */,
 				BDE0B56A289470C0008B2DC1 /* EventDetailsViewModel.swift */,
 				BDE0B5AC2894E336008B2DC1 /* DetailsCard.swift */,
+				BDE0B5B82895A5CA008B2DC1 /* DescriptionCard.swift */,
 			);
 			path = EventDetails;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				BDE0B57128948BB8008B2DC1 /* CustomError.swift in Sources */,
 				BDE0B55E28946A3F008B2DC1 /* EventDetailsViewController.swift in Sources */,
 				BDE0B5B32894F2E4008B2DC1 /* DateHelper.swift in Sources */,
+				BDE0B5B92895A5CA008B2DC1 /* DescriptionCard.swift in Sources */,
 				BDE0B56328946BC9008B2DC1 /* EventsListViewModelProtocol.swift in Sources */,
 				BDE0B5B12894EE02008B2DC1 /* Event.swift in Sources */,
 				BDA71D242892EA9000E4AEA9 /* AppDelegate.swift in Sources */,

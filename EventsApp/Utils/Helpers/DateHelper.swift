@@ -11,11 +11,13 @@ class DateHelper {
 	static var shared = DateHelper()
 	
 	func dateConverter(value: Int?) -> String {
-		let timeInterval = String(value ?? 0)
+		var timeInterval = "\(value ?? 0)"
 		let offset = timeInterval.dropLast(3)
 		
+		timeInterval.removeSubrange(timeInterval.index(timeInterval.endIndex, offsetBy: -3)..<timeInterval.endIndex)
+		
 		let dateFormatter = DateFormatter()
-		dateFormatter.dateFormat = "EEEE', 'MMMM d, yyyy 'AT' HH:MM 'Hours'"
+		dateFormatter.dateFormat = "EEEE', 'MMMM d, yyyy 'AT' HH'h'MM 'min'"
 		dateFormatter.timeZone = TimeZone(secondsFromGMT: Int(offset) ?? 0)
 		
 		if let interval = Double(timeInterval) {

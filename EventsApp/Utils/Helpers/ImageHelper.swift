@@ -12,23 +12,22 @@ import Alamofire
 class ImageHelper {
 	static var shared = ImageHelper()
 	
-	func urlImageConverter(url: String?) -> UIImage? {
-		var image: UIImage?
+	func urlImageConverter(url: String?, result: @escaping (Result<Data, Error>) -> Void) {
 		
-		guard let url = url else { return UIImage() }
-		
+		guard let url = url else { return }
+	
 		AF.request(url).response {  response in
 			switch response.result {
 			case .success(let data):
 				if let data = data {
-					image = UIImage(data: data)
+					result(.success(data))
+				} else {
+					result(.failure(CustomError(errorDescription: EAStrings.noDataFound.rawValue)))
 				}
 				
-			case .failure(_):
-				image = UIImage()
+			case .failure(let error):
+				result(.failure(error))
 			}
 		}
-		
-		return image
 	}
 }

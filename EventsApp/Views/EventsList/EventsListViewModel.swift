@@ -22,7 +22,7 @@ final class EventsListViewModel: EventsListViewModelProtocol {
 						finish(CustomError(errorDescription: EAStrings.noDataFound.rawValue))
 						return
 					}
-
+					
 					let newEventsArray = try JSONDecoder().decode([EventJSON].self, from: data)
 
 					self?.events.onNext(newEventsArray)

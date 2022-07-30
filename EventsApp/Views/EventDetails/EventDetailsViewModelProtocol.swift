@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 public protocol EventDetailsViewModelProtocol {
-	var event: BehaviorSubject<Event>? { get }
+	var event: BehaviorSubject<Event> { get }
 	
 	func fetchEvent(finish: @escaping (Error?) -> Void)
 }

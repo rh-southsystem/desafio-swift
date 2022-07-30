@@ -9,10 +9,10 @@ import UIKit
 
 public struct Event {
 	var id: String
-	var title: String?
-	var date: String?
-	var description: String?
-	var image: UIImage?
-	var local: String?
-	var price: Double?
+	var title: String
+	var date: String
+	var description: String
+	var image: Data?
+	var local: String
+	var price: Double
 }

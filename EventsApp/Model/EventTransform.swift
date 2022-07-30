@@ -6,21 +6,36 @@
 //
 
 import Foundation
+import UIKit
 
-struct EventTransform {
-	var entity: Event
-
-	init(eventJSON: EventJSON) {
+class EventTransform {
+	static var shared = EventTransform()
+	
+	func transform(eventJSON: EventJSON, completion: @escaping (Event) -> Void) {
 		let newDate = DateHelper.shared.dateConverter(value: eventJSON.date)
-		let image = ImageHelper.shared.urlImageConverter(url: eventJSON.image)
-		let local = LocationHelper.shared.convertCoordinates(latitude: eventJSON.latitude, longitude: eventJSON.longitude)
 		
-		entity = Event(id: eventJSON.id,
-					   title: eventJSON.title,
-//					   date: newDate,
-					   description: eventJSON.description,
-//					   image: image,
-//					   local: local,
-					   price: eventJSON.price)
+		ImageHelper.shared.urlImageConverter(url: eventJSON.image) { result in
+			var imageData: Data?
+			
+			switch result {
+			case .success(let data):
+				imageData = data
+				
+			case .failure(_):
+				imageData = nil
+			}
+			
+			LocationHelper.shared.convertCoordinates(latitude: eventJSON.latitude, longitude: eventJSON.longitude) { local in
+				
+				completion(Event(id: eventJSON.id,
+							   title: eventJSON.title ?? EAStrings.unknownName.rawValue,
+							   date: newDate,
+							   description: eventJSON.description ?? EAStrings.noDescriptionProvided.rawValue,
+							   image: imageData,
+							   local: local,
+							   price: eventJSON.price ?? 0))
+			}
+		}
+		
 	}
 }
