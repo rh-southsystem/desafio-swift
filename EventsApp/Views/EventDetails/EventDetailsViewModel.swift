@@ -27,9 +27,9 @@ class EventDetailsViewModel: EventDetailsViewModelProtocol {
 						finish(CustomError(errorDescription: EAStrings.noDataFound.rawValue))
 						return
 					}
-					let newEvent = try JSONDecoder().decode(Event.self, from: data)
+					let newEvent = try JSONDecoder().decode(EventJSON.self, from: data)
 					
-					self?.event?.onNext(newEvent)
+					self?.event?.onNext(EventTransform(eventJSON: newEvent).entity)
 				} catch {
 					finish(error)
 				}

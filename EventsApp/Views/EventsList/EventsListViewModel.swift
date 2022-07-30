@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 
 final class EventsListViewModel: EventsListViewModelProtocol {
-	var events = PublishSubject<[Event]>()
+	var events = PublishSubject<[EventJSON]>()
 	
 	func fetchEventsList(finish: @escaping (Error?) -> Void) {
 		AF.request(Endpoints.eventsList.rawValue).response { [weak self] response in
@@ -23,7 +23,7 @@ final class EventsListViewModel: EventsListViewModelProtocol {
 						return
 					}
 
-					let newEventsArray = try JSONDecoder().decode([Event].self, from: data)
+					let newEventsArray = try JSONDecoder().decode([EventJSON].self, from: data)
 
 					self?.events.onNext(newEventsArray)
 				} catch {
