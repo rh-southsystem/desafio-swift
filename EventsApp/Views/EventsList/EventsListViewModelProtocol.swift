@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 
 public protocol EventsListViewModelProtocol {
-	var events: PublishSubject<[Event]> { get }
+	var events: PublishSubject<[EventJSON]> { get }
 	
 	func fetchEventsList(finish: @escaping (Error?) -> Void)
 }

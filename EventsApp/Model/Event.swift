@@ -2,18 +2,17 @@
 //  Event.swift
 //  EventsApp
 //
-//  Created by Rodrigo Ryo Aoki on 29/07/22.
+//  Created by Rodrigo Ryo Aoki on 30/07/22.
 //
 
 import UIKit
 
-public struct Event: Decodable {
+public struct Event {
 	var id: String
-	var date: Int?
-	var description: String?
-	var image: String?
-	var latitude: Double?
-	var longitude: Double?
-	var price: Double?
 	var title: String?
+	var date: String?
+	var description: String?
+	var image: UIImage?
+	var local: String?
+	var price: Double?
 }

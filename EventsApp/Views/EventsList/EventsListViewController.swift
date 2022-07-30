@@ -77,7 +77,7 @@ class EventsListViewController: UIViewController {
 			
 		}.disposed(by: bag)
 		
-		tableView.rx.modelSelected(Event.self).bind(onNext: { [weak self] item in
+		tableView.rx.modelSelected(EventJSON.self).bind(onNext: { [weak self] item in
 			self?.outputHandler?(.openDetails(item.id))
 		}).disposed(by: bag)
 		
