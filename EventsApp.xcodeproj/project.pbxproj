@@ -31,7 +31,6 @@
 		BDE0B5A32894995C008B2DC1 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BDE0B5A22894995C008B2DC1 /* RxCocoa */; };
 		BDE0B5A52894995C008B2DC1 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = BDE0B5A42894995C008B2DC1 /* RxBlocking */; };
 		BDE0B5A72894A249008B2DC1 /* ComponentCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B5A62894A249008B2DC1 /* ComponentCreation.swift */; };
-		BDE0B5A92894A3C5008B2DC1 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B5A82894A3C5008B2DC1 /* EventCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +89,6 @@
 		BDE0B57028948BB8008B2DC1 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		BDE0B57228949010008B2DC1 /* EAStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAStrings.swift; sourceTree = "<group>"; };
 		BDE0B5A62894A249008B2DC1 /* ComponentCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentCreation.swift; sourceTree = "<group>"; };
-		BDE0B5A82894A3C5008B2DC1 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +201,6 @@
 				BDA71D272892EA9000E4AEA9 /* EventsListViewController.swift */,
 				BDE0B56228946BC9008B2DC1 /* EventsListViewModelProtocol.swift */,
 				BDE0B56028946B82008B2DC1 /* EventsListViewModel.swift */,
-				BDE0B5A82894A3C5008B2DC1 /* EventCell.swift */,
 			);
 			path = EventsList;
 			sourceTree = "<group>";
@@ -412,7 +409,6 @@
 				BDE0B5542894568D008B2DC1 /* Event.swift in Sources */,
 				BDE0B55C289463FA008B2DC1 /* EventsListRoute.swift in Sources */,
 				BDE0B5A72894A249008B2DC1 /* ComponentCreation.swift in Sources */,
-				BDE0B5A92894A3C5008B2DC1 /* EventCell.swift in Sources */,
 				BDA71D262892EA9000E4AEA9 /* SceneDelegate.swift in Sources */,
 				BDE0B56F2894747B008B2DC1 /* Endpoints.swift in Sources */,
 				BDE0B56B289470C0008B2DC1 /* EventDetailsViewModel.swift in Sources */,
