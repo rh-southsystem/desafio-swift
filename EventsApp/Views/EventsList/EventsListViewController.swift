@@ -55,15 +55,8 @@ class EventsListViewController: UIViewController {
 		self.view.backgroundColor = .white
 		
 		setupView()
-		tableView.rx.setDelegate(self).disposed(by: bag)
 		
 		bindTableView()
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		viewModel?.fetchEventsList(finish: { [weak self] error in
-			self?.outputHandler?(.fetchError(error))
-		})
 	}
 	
 	private func bindTableView() {
@@ -73,6 +66,7 @@ class EventsListViewController: UIViewController {
 			
 			if let title = item.title {
 				cell.textLabel?.text = title
+				cell.selectionStyle = .none
 			}
 			
 		}.disposed(by: bag)
@@ -83,6 +77,15 @@ class EventsListViewController: UIViewController {
 		
 		viewModel?.fetchEventsList(finish: { [weak self] error in
 			self?.outputHandler?(.fetchError(error))
+		})
+	}
+	
+	@objc private func didPullToRefresh() {
+		viewModel?.fetchEventsList(finish: { [weak self] error in
+			if let error = error {
+				self?.outputHandler?(.fetchError(error))
+			}
+			self?.tableView.refreshControl?.endRefreshing()
 		})
 	}
 }
@@ -102,7 +105,9 @@ extension EventsListViewController: ComponentCreation {
 	}
 	
 	func setupAdditionalConfiguration() {
-		
+		tableView.rx.setDelegate(self).disposed(by: bag)
+		tableView.refreshControl = UIRefreshControl()
+		tableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
 	}
 }
 

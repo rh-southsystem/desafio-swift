@@ -26,6 +26,7 @@ final class EventsListViewModel: EventsListViewModelProtocol {
 					let newEventsArray = try JSONDecoder().decode([EventJSON].self, from: data)
 
 					self?.events.onNext(newEventsArray)
+					finish(nil)
 				} catch {
 					finish(error)
 				}
