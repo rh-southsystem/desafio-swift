@@ -130,7 +130,8 @@ extension EventDetailsViewController: ComponentCreation {
 	}
 	
 	func setupAdditionalConfiguration() {
-		
+		self.scrollView.refreshControl = UIRefreshControl()
+		self.scrollView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
 	}
 }
 
@@ -155,9 +156,15 @@ private extension EventDetailsViewController {
 				}
 				
 				self?.title = event.element?.title
+				
+				self?.scrollView.refreshControl?.endRefreshing()
 			}
 		}).disposed(by: bag)
 		
+		viewModel?.fetchEvent(finish: { error in })
+	}
+	
+	@objc func didPullToRefresh() {
 		viewModel?.fetchEvent(finish: { error in })
 	}
 	
