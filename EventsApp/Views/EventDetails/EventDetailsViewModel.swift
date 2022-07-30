@@ -12,9 +12,14 @@ import RxCocoa
 
 class EventDetailsViewModel: EventDetailsViewModelProtocol {
 	private(set) var event: BehaviorSubject<Event>?
+	private let id: String
 	
-	func fetchEvent(id: String, finish: @escaping (Error?) -> Void) {
-		AF.request(Endpoints.eventsList.rawValue.appending(id)).response { [weak self] response in
+	init(id: String) {
+		self.id = id
+	}
+	
+	func fetchEvent(finish: @escaping (Error?) -> Void) {
+		AF.request(Endpoints.eventsList.rawValue.appending(self.id)).response { [weak self] response in
 			switch response.result {
 			case .success(let data):
 				do {

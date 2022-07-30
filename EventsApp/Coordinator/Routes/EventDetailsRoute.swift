@@ -9,7 +9,7 @@ import Foundation
 
 extension AppCoordinator {
 	func showEventDetailsRoute(id: String) {
-		let viewModel = EventDetailsViewModel()
+		let viewModel = EventDetailsViewModel(id: id)
 		
 		let vc = EventDetailsViewController(viewModel: viewModel) { output in
 			switch output {

@@ -12,5 +12,5 @@ import RxCocoa
 public protocol EventDetailsViewModelProtocol {
 	var event: BehaviorSubject<Event>? { get }
 	
-	func fetchEvent(id: String, finish: @escaping (Error?) -> Void)
+	func fetchEvent(finish: @escaping (Error?) -> Void)
 }
