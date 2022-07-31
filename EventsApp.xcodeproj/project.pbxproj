@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD50DAF3289639D300D16D6B /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50DAF2289639D300D16D6B /* FormView.swift */; };
+		BD50DAF728963AF400D16D6B /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD50DAF628963AF400D16D6B /* FormField.swift */; };
 		BD68F2AA2895CEDC00EC9580 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD68F2A92895CEDC00EC9580 /* ViewModelProtocol.swift */; };
+		BD68F2B12895D76D00EC9580 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD68F2B02895D76D00EC9580 /* ErrorViewController.swift */; };
+		BD68F2B32895DB7E00EC9580 /* ErrorRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD68F2B22895DB7E00EC9580 /* ErrorRoute.swift */; };
 		BDA71D242892EA9000E4AEA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA71D232892EA9000E4AEA9 /* AppDelegate.swift */; };
 		BDA71D262892EA9000E4AEA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA71D252892EA9000E4AEA9 /* SceneDelegate.swift */; };
 		BDA71D282892EA9000E4AEA9 /* EventsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA71D272892EA9000E4AEA9 /* EventsListViewController.swift */; };
@@ -16,6 +20,7 @@
 		BDA71D3B2892EA9100E4AEA9 /* EventsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA71D3A2892EA9100E4AEA9 /* EventsAppTests.swift */; };
 		BDA71D462892EA9100E4AEA9 /* EventsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA71D452892EA9100E4AEA9 /* EventsAppUITests.swift */; };
 		BDA71D562892ECDE00E4AEA9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BDA71D552892ECDE00E4AEA9 /* Alamofire */; };
+		BDCAD08E28973EB000979956 /* CheckInPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCAD08D28973EB000979956 /* CheckInPerson.swift */; };
 		BDE0B5542894568D008B2DC1 /* EventJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B5532894568D008B2DC1 /* EventJSON.swift */; };
 		BDE0B55928946246008B2DC1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B55828946246008B2DC1 /* AppCoordinator.swift */; };
 		BDE0B55C289463FA008B2DC1 /* EventsListRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B55B289463FA008B2DC1 /* EventsListRoute.swift */; };
@@ -73,7 +78,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BD50DAF2289639D300D16D6B /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		BD50DAF628963AF400D16D6B /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
 		BD68F2A92895CEDC00EC9580 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		BD68F2B02895D76D00EC9580 /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		BD68F2B22895DB7E00EC9580 /* ErrorRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorRoute.swift; sourceTree = "<group>"; };
 		BDA71D202892EA9000E4AEA9 /* EventsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA71D232892EA9000E4AEA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDA71D252892EA9000E4AEA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +96,7 @@
 		BDA71D412892EA9100E4AEA9 /* EventsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDA71D452892EA9100E4AEA9 /* EventsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsAppUITests.swift; sourceTree = "<group>"; };
 		BDA71D472892EA9100E4AEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDCAD08D28973EB000979956 /* CheckInPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInPerson.swift; sourceTree = "<group>"; };
 		BDE0B5532894568D008B2DC1 /* EventJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventJSON.swift; sourceTree = "<group>"; };
 		BDE0B55828946246008B2DC1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		BDE0B55B289463FA008B2DC1 /* EventsListRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListRoute.swift; sourceTree = "<group>"; };
@@ -139,6 +149,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD50DAF428963AAE00D16D6B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BD50DAF528963ABD00D16D6B /* FormView */,
+				BDE0B5AC2894E336008B2DC1 /* DetailsCard.swift */,
+				BDE0B5B82895A5CA008B2DC1 /* DescriptionCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BD50DAF528963ABD00D16D6B /* FormView */ = {
+			isa = PBXGroup;
+			children = (
+				BD50DAF2289639D300D16D6B /* FormView.swift */,
+				BD50DAF628963AF400D16D6B /* FormField.swift */,
+			);
+			path = FormView;
+			sourceTree = "<group>";
+		};
+		BD68F2AF2895D75600EC9580 /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				BD68F2B02895D76D00EC9580 /* ErrorViewController.swift */,
+			);
+			path = ErrorView;
+			sourceTree = "<group>";
+		};
 		BDA71D172892EA9000E4AEA9 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +231,7 @@
 				BDE0B5532894568D008B2DC1 /* EventJSON.swift */,
 				BDE0B5B02894EE02008B2DC1 /* Event.swift */,
 				BDE0B5AE2894ED14008B2DC1 /* EventTransform.swift */,
+				BDCAD08D28973EB000979956 /* CheckInPerson.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +250,7 @@
 			children = (
 				BDE0B55B289463FA008B2DC1 /* EventsListRoute.swift */,
 				BDE0B5AA2894BB66008B2DC1 /* EventDetailsRoute.swift */,
+				BD68F2B22895DB7E00EC9580 /* ErrorRoute.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -231,6 +270,7 @@
 			children = (
 				BDE0B55F28946B5A008B2DC1 /* EventsList */,
 				BDE0B56728947065008B2DC1 /* EventDetails */,
+				BD68F2AF2895D75600EC9580 /* ErrorView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,8 +302,7 @@
 				BDE0B55D28946A3F008B2DC1 /* EventDetailsViewController.swift */,
 				BDE0B5682894709A008B2DC1 /* EventDetailsViewModelProtocol.swift */,
 				BDE0B56A289470C0008B2DC1 /* EventDetailsViewModel.swift */,
-				BDE0B5AC2894E336008B2DC1 /* DetailsCard.swift */,
-				BDE0B5B82895A5CA008B2DC1 /* DescriptionCard.swift */,
+				BD50DAF428963AAE00D16D6B /* Components */,
 			);
 			path = EventDetails;
 			sourceTree = "<group>";
@@ -436,7 +475,10 @@
 				BDE0B5B12894EE02008B2DC1 /* Event.swift in Sources */,
 				BDA71D242892EA9000E4AEA9 /* AppDelegate.swift in Sources */,
 				BDE0B5AF2894ED14008B2DC1 /* EventTransform.swift in Sources */,
+				BD68F2B12895D76D00EC9580 /* ErrorViewController.swift in Sources */,
+				BDCAD08E28973EB000979956 /* CheckInPerson.swift in Sources */,
 				BDE0B55928946246008B2DC1 /* AppCoordinator.swift in Sources */,
+				BD50DAF728963AF400D16D6B /* FormField.swift in Sources */,
 				BDE0B5692894709A008B2DC1 /* EventDetailsViewModelProtocol.swift in Sources */,
 				BDE0B5B728957A8D008B2DC1 /* LocationHelper.swift in Sources */,
 				BDE0B5AB2894BB66008B2DC1 /* EventDetailsRoute.swift in Sources */,
@@ -445,7 +487,9 @@
 				BDE0B55C289463FA008B2DC1 /* EventsListRoute.swift in Sources */,
 				BDE0B5A72894A249008B2DC1 /* ComponentCreation.swift in Sources */,
 				BDA71D262892EA9000E4AEA9 /* SceneDelegate.swift in Sources */,
+				BD68F2B32895DB7E00EC9580 /* ErrorRoute.swift in Sources */,
 				BDE0B56F2894747B008B2DC1 /* Endpoints.swift in Sources */,
+				BD50DAF3289639D300D16D6B /* FormView.swift in Sources */,
 				BDE0B56B289470C0008B2DC1 /* EventDetailsViewModel.swift in Sources */,
 				BDE0B5B52895024B008B2DC1 /* ImageHelper.swift in Sources */,
 			);

@@ -18,4 +18,12 @@ enum EAStrings: String {
 	case description = "Descrição"
 	case price = "Preço:"
 	case free = "Gratuito"
+	case gotIt = "Entendi"
+	case weHadAProblem = "Parece que algo não está funcionando."
+	case confirmPresence = "Confirmar presença"
+	case confirm = "Confirmar"
+	case presenceConfirmed = "Presença confirmada"
+	case name = "Nome"
+	case email = "Email"
+	case formToConfirm = "Formulário de confirmação"
 }

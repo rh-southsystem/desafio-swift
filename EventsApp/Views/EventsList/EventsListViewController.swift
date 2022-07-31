@@ -79,7 +79,9 @@ private extension EventsListViewController {
 		}).disposed(by: bag)
 		
 		viewModel?.fetchEventsList(finish: { [weak self] error in
-			self?.outputHandler?(.fetchError(error))
+			if let error = error {
+				self?.outputHandler?(.fetchError(error))
+			}
 		})
 	}
 	

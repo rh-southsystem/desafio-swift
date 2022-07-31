@@ -17,11 +17,12 @@ extension AppCoordinator {
 				DispatchQueue.main.async {
 					vc?.dismiss(animated: true, completion: { })
 				}
+			case .fetchError(let error):
+				self.showError(message: error?.localizedDescription)
 			}
 		}
 		
 		DispatchQueue.main.async {
-			vc?.modalPresentationStyle = .fullScreen
 			if let vc = vc {
 				self.navigationController?.pushViewController(vc, animated: true)
 			}

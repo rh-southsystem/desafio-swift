@@ -8,6 +8,7 @@
 import UIKit
 
 class DescriptionCard: UIStackView {
+	
 	// MARK: - Properties
 	
 	private var descriptionTitleLabel: UILabel = {

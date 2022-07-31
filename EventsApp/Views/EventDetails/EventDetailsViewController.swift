@@ -74,6 +74,27 @@ class EventDetailsViewController: UIViewController {
 		return view
 	}()
 	
+	private var confirmButton: UIButton = {
+		var view = UIButton(type: .roundedRect)
+		
+		view.setTitle(EAStrings.confirmPresence.rawValue, for: .normal)
+		view.tintColor = .white
+		view.backgroundColor = .systemBlue
+		view.layer.cornerRadius = 10
+		view.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
+		view.addTarget(self, action: #selector(didConfirmPresence), for: .touchUpInside)
+		
+		view.translatesAutoresizingMaskIntoConstraints = false
+		return view
+	}()
+	
+	private var formView: FormView = {
+		var view = FormView(settings: [])
+		
+		view.translatesAutoresizingMaskIntoConstraints = false
+		return view
+	}()
+	
 	// MARK: - Init
 	
 	required init(viewModel: EventDetailsViewModelProtocol,
@@ -92,6 +113,7 @@ class EventDetailsViewController: UIViewController {
 	
 	enum Output {
 		case close
+		case fetchError(Error?)
 	}
 	
 	// MARK: - Overrides
@@ -116,7 +138,10 @@ extension EventDetailsViewController: ComponentCreation {
 
 		scrollView.addSubview(imageView)
 		scrollContentView.addArrangedSubview(detailsCard)
+		scrollContentView.addArrangedSubview(confirmButton)
 		scrollContentView.addArrangedSubview(descriptionCard)
+		
+		view.addSubview(formView)
 	}
 	
 	func setupConstraints() {
@@ -135,12 +160,21 @@ extension EventDetailsViewController: ComponentCreation {
 			imageView.topAnchor.constraint(equalTo: self.scrollView.topAnchor),
 			imageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
 			imageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+			
+			formView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+			formView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+			formView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 25),
+			formView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -25)
 		])
 	}
 	
 	func setupAdditionalConfiguration() {
 		self.scrollView.refreshControl = UIRefreshControl()
 		self.scrollView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+		
+		formView.isHidden = true
+		
+		configureFormView()
 	}
 }
 
@@ -168,11 +202,42 @@ private extension EventDetailsViewController {
 			}
 		}).disposed(by: bag)
 		
-		viewModel?.fetchEvent(finish: { error in })
+		viewModel?.fetchEvent(finish: { [weak self] error in
+			if let error = error {
+				self?.outputHandler?(.fetchError(error))
+			}
+		})
 	}
 	
 	@objc func didPullToRefresh() {
-		viewModel?.fetchEvent(finish: { [weak self] error in})
+		viewModel?.fetchEvent(finish: { [weak self] error in
+			if let error = error {
+				self?.outputHandler?(.fetchError(error))
+			}
+		})
+	}
+	
+	@objc func didConfirmPresence() {
+		DispatchQueue.main.async { [weak self] in
+			self?.formView.isHidden = false
+		}
+	}
+	
+	func configureFormView() {
+		formView.updateSettings(settings: [.confirm({ [weak self] name, email in
+			self?.viewModel?.confirmPresence(name: name, email: email) { [weak self] error in
+				if let error = error {
+					self?.outputHandler?(.fetchError(error))
+				} else {
+					self?.outputHandler?(.fetchError(CustomError(errorDescription: EAStrings.presenceConfirmed.rawValue)))
+				}
+				
+				DispatchQueue.main.async {
+					self?.formView.isHidden = true
+					self?.formView.clearFields()
+				}
+			}
+		})])
 	}
 	
 	func defaultImage() {

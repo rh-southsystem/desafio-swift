@@ -48,4 +48,18 @@ class EventDetailsViewModel: EventDetailsViewModelProtocol {
 			}
 		}
 	}
+	
+	func confirmPresence(name: String, email: String, completion: @escaping (Error?) -> Void) {
+		let params = CheckInPerson(id: self.id, name: name, email: email)
+		
+		AF.request(Endpoints.checkIn.rawValue, method: .post, parameters: params, encoder: JSONParameterEncoder.default).response { response in
+			switch response.result {
+			case .success(_):
+				completion(nil)
+				
+			case .failure(let error):
+				completion(error)
+			}
+		}
+	}
 }

@@ -14,8 +14,8 @@ extension AppCoordinator {
 			switch output {
 			case .openDetails(let id):
 				self.showEventDetailsRoute(id: id)
-			case .fetchError(_):
-				break
+			case .fetchError(let error):
+				self.showError(message: error?.localizedDescription)
 			}
 		}
 		
