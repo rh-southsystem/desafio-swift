@@ -28,7 +28,7 @@ class EventsListViewController: UIViewController {
 	
 	// MARK: - Init
 	
-	required init(viewModel: EventsListViewModel,
+	required init(viewModel: EventsListViewModelProtocol,
 				  outputHandler: @escaping (EventsListViewController.Output) -> Void) {
 		super.init(nibName: nil, bundle: nil)
 		
