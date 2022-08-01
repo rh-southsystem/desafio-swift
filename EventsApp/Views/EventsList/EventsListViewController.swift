@@ -17,7 +17,7 @@ class EventsListViewController: UIViewController {
 	private var outputHandler: ((EventsListViewController.Output) -> Void)?
 	private let bag = DisposeBag()
 	
-	private var tableView: UITableView = {
+	private(set) var tableView: UITableView = {
 		let view = UITableView()
 		view.separatorStyle = .singleLine
 		view.separatorColor = .black

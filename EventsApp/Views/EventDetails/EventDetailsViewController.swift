@@ -49,7 +49,7 @@ class EventDetailsViewController: UIViewController {
 		return view
 	}()
 	
-	private var detailsCard: DetailsCard = {
+	private(set) var detailsCard: DetailsCard = {
 		var view = DetailsCard()
 		
 		view.translatesAutoresizingMaskIntoConstraints = false
@@ -57,7 +57,7 @@ class EventDetailsViewController: UIViewController {
 		return view
 	}()
 	
-	private var descriptionCard: DescriptionCard = {
+	private(set) var descriptionCard: DescriptionCard = {
 		var view = DescriptionCard()
 		
 		view.translatesAutoresizingMaskIntoConstraints = false

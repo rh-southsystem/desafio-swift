@@ -22,6 +22,7 @@
 		BDA71D562892ECDE00E4AEA9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BDA71D552892ECDE00E4AEA9 /* Alamofire */; };
 		BDCAD08E28973EB000979956 /* CheckInPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCAD08D28973EB000979956 /* CheckInPerson.swift */; };
 		BDCAD09028975C5500979956 /* EventsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCAD08F28975C5500979956 /* EventsListTests.swift */; };
+		BDCAD092289766A400979956 /* EventDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCAD091289766A400979956 /* EventDetailsTests.swift */; };
 		BDE0B5542894568D008B2DC1 /* EventJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B5532894568D008B2DC1 /* EventJSON.swift */; };
 		BDE0B55928946246008B2DC1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B55828946246008B2DC1 /* AppCoordinator.swift */; };
 		BDE0B55C289463FA008B2DC1 /* EventsListRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE0B55B289463FA008B2DC1 /* EventsListRoute.swift */; };
@@ -99,6 +100,7 @@
 		BDA71D472892EA9100E4AEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDCAD08D28973EB000979956 /* CheckInPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInPerson.swift; sourceTree = "<group>"; };
 		BDCAD08F28975C5500979956 /* EventsListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListTests.swift; sourceTree = "<group>"; };
+		BDCAD091289766A400979956 /* EventDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsTests.swift; sourceTree = "<group>"; };
 		BDE0B5532894568D008B2DC1 /* EventJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventJSON.swift; sourceTree = "<group>"; };
 		BDE0B55828946246008B2DC1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		BDE0B55B289463FA008B2DC1 /* EventsListRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListRoute.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				BDCAD08F28975C5500979956 /* EventsListTests.swift */,
+				BDCAD091289766A400979956 /* EventDetailsTests.swift */,
 				BDA71D3A2892EA9100E4AEA9 /* HelpersTests.swift */,
 				BDA71D3C2892EA9100E4AEA9 /* Info.plist */,
 			);
@@ -503,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDCAD09028975C5500979956 /* EventsListTests.swift in Sources */,
+				BDCAD092289766A400979956 /* EventDetailsTests.swift in Sources */,
 				BDA71D3B2892EA9100E4AEA9 /* HelpersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

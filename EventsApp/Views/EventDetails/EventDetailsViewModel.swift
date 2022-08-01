@@ -36,6 +36,7 @@ class EventDetailsViewModel: EventDetailsViewModelProtocol {
 					EventTransform.shared.transform(eventJSON: newEvent) { [weak self] ev in
 						self?.loading.onNext(false)
 						self?.event.onNext(ev)
+						finish(nil)
 					}
 				} catch {
 					finish(error)
